@@ -1,0 +1,7 @@
+input.form-check-input:not(:checked) + label {
+  @extend .btn-primary !optional;
+}
+
+input.form-check-input:checked + label {
+  @extend .btn-success !optional;
+}

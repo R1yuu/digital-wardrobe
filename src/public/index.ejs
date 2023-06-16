@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Wardrobe</title>
+    <link rel="stylesheet" type="text/css" href="/css/core.css">
+</head>
+<body class="container-fluid">
+    <div id="collections" class="col-5">
+        <%- include('./collection', {categories: categories, clothing: clothing}); %>
+    </div>
+    <div class="col-5">
+
+    </div>
+    <div class="col-2">
+
+    </div>
+
+    <script type="module" src="/js/core.js"></script>
+    <script src="/js/collection.js"></script>
+</body>
+</html>

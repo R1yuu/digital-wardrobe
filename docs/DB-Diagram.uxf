@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>6</y>
+      <w>144</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Category
+id: integer, primary key, generate always as identity
+name: text, unique, not null</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>228</x>
+      <y>90</y>
+      <w>108</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Subcategory
+--
+id: int, primary key
+name: text, unique, not null
+category: int, foreign key, not null</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>390</y>
+      <w>84</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Season
+--
+id: int, primary key
+name: text, not null</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>144</y>
+      <w>186</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Colour
+--
+id: int, primary key
+red: int, not null, 0 &lt;= x &lt;= 255
+green: int, not null, 0 &lt;= x &lt;= 255
+blue: int, not null, 0 &lt;= x &lt;= 255
+alpha: number, not null, 0 &lt;= x &lt;= 1
+gradient_red: int, 0 &lt;= x &lt;= 255
+gradient_green: int, 0 &lt;= x &lt;= 255
+gradient_blue: int, 0 &lt;= x &lt;= 255
+gradient_alpha: number, 0 &lt;= x &lt;= 1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>66</x>
+      <y>204</y>
+      <w>90</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Pattern
+--
+id: int, primary key
+image: bytea, unique, not null</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>396</y>
+      <w>90</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Material
+--
+id: int, primary key
+name: varchar, not null</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>276</x>
+      <y>36</y>
+      <w>30</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=-&lt;
+m1=1
+m2=0..n</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>192</y>
+      <w>138</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Clothing_Subcategory
+--
+clothing: int, foreign key
+subcategory: int, foreign key
+--
+primary key(clothing, subcategory)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>276</x>
+      <y>138</y>
+      <w>30</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>228</x>
+      <y>288</y>
+      <w>102</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Clothing
+--
+id: int, primary key
+image: bytea, unique, not null
+laundry: boolean, not null
+favourite: boolean, not null</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>276</x>
+      <y>240</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>390</x>
+      <y>294</y>
+      <w>138</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Clothing_Colour
+--
+clothing: int, foreign key
+colour: int, foreign key
+--
+primary key(clothing, colour)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>324</x>
+      <y>312</y>
+      <w>78</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>456</x>
+      <y>246</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>390</y>
+      <w>138</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Clothing_Season
+--
+clothing: int, foreign key
+season: int, foreign key
+--
+primary key(clothing, season)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>402</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>342</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>144</x>
+      <y>390</y>
+      <w>138</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Clothing_Material
+--
+clothing: int, foreign key
+material: int, foreign key
+--
+primary key(clothing, material)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>42</x>
+      <y>288</y>
+      <w>138</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>Clothing_Pattern
+--
+clothing: integer, foreign key
+pattern: integer, foreign key
+--
+primary key(clothing, pattern)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>84</x>
+      <y>408</y>
+      <w>72</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>102</x>
+      <y>240</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>174</x>
+      <y>306</y>
+      <w>66</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>246</x>
+      <y>342</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&gt;-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

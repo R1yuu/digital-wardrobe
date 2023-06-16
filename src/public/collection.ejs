@@ -1,0 +1,14 @@
+<h1>Collection</h1>
+<nav id="collections-nav">
+    <form id="categoriesForm">
+        <% categories.forEach((category, idx) => { %>
+            <input class="form-check-input d-none" type="radio" name="category" id="category-radio-<%= category.name %>" value="<%= category.name %>" <%= idx === 0 ? "checked" : "" %> required/>
+            <label class="form-check-label btn" for="category-radio-<%= category.name %>" id="category-button-<%= category.name %>"><%= category.name %></label>
+        <% }); %>
+    </form>
+</nav>
+<div class="d-flex" id="clothes">
+    <% clothing.forEach((clothing) => {%>
+        <p><%= clothing.id %></p>
+    <%});%>
+</div>
